@@ -91,7 +91,7 @@ BEGIN
     WHERE d.DeptName="Information Technology";
 END //
 DELIMITER ; 
-CALL GetStudentsIT('CS101');
+CALL GetStudentsIT();
 
 CREATE OR REPLACE VIEW ViewStudentCountByDept AS
 	SELECT d.DeptName as`Ten khoa`,COUNT(s.DeptID) AS `So luong sinh vien moi khoa` FROM Student s

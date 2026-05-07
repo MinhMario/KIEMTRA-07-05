@@ -114,15 +114,10 @@ BEGIN
         e.Score
     FROM Enrollment e
     WHERE e.CourseID = varCourseID
-      AND e.Score = (
-            SELECT MAX(Score)
-            FROM Enrollment
-            WHERE CourseID = varCourseID
-      )
-      GROUP BY e.StudentID,e.CourseID;
+      AND e.Score = (SELECT MAX(Score) FROM Enrollment WHERE CourseID = varCourseID);
 END //
 DELIMITER ;
-CALL GetTopScoreStudent('CS101');
+CALL GetTopScoreStudent('DB201');
 
 
 
